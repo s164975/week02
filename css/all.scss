@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+// color
+$dark: #000;
+$white: #fff;
+$gray: #707070;
+$soft-cyan: #69f0ae;
+$dark-red: #891818;
+
+// margin padding space-base
+$space-base: 8px;
+
+// margin padding level
+$spaces: 1 2 3 4 5 6 7 8 10 20;
+
+$line-heights: (
+  xs: 30,
+  sm: 36,
+  md: 42,
+  lg: 75,
+  xl: 94,
+);
+
+// font-weight
+$wghts: 500 700 900;
+
+$font-sizes: (
+  xs: 20,
+  sm: 24,
+  md: 64,
+  lg: 80,
+);
+
+$heights: (
+  xs: 28,
+  sm: 30,
+);
+
+// margin padding
+@each $val in $spaces {
+  .m {
+    &t-#{$val} {
+      margin-top: $val * $space-base;
+    }
+    &r-#{$val} {
+      margin-right: $val * $space-base;
+    }
+    &b-#{$val} {
+      margin-bottom: $val * $space-base;
+    }
+  }
+
+  .p {
+    &t-#{$val} {
+      padding-top: $val * $space-base;
+    }
+    &b-#{$val} {
+      padding-bottom: $val * $space-base;
+    }
+  }
+}
+
+// line-height
+@each $val, $height in $line-heights {
+  .lh-#{$val} {
+    line-height: $height + px;
+  }
+}
+
+// font-weight
+@each $val in $wghts {
+  .fw-#{$val} {
+    font-weight: $val;
+  }
+}
+
+// font-size
+@each $val, $size in $font-sizes {
+  .fz-#{$val} {
+    font-size: $size + px;
+  }
+}
+
+// height
+@each $val, $height in $heights {
+  .hg-#{$val} {
+    height: $height + px;
+  }
+}
+
+.d-flex {
+  display: flex;
+}
+
+.d-block {
+  display: block;
+}
+
+.d-inline-block {
+  display: inline-block;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.mx-center {
+  margin: 0 auto;
+}
+
+.mb-68 {
+  margin-bottom: 68px;
+}
+
+.txt-secondary {
+  color: $white;
+}
+
+.txt-center {
+  text-align: center;
+}
+
+.txt-deco-none {
+  text-decoration: none;
+}
+
+.bg-primary {
+  background-color: $dark;
+}
+
+body {
+  font-size: 24px;
+  font-family: "Roboto", sans-serif;
+}
+
+.banner {
+  height: 100vh;
+  background: url(https://github.com/hexschool/webLayoutTraining1st/blob/master/week2/banner.png?raw=true) center center /
+    cover;
+  border: 1px solid $gray;
+  h2 {
+    width: 283px;
+  }
+}
+
+.about {
+  width: 412px;
+  .profile {
+    &::after {
+      content: "";
+      display: block;
+      width: 384px;
+      height: 1px;
+      margin: 0 auto;
+      background: $dark;
+    }
+  }
+
+  .work-experience {
+    li {
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 22px;
+        height: 22px;
+        margin-right: 16px;
+        background-color: $dark-red;
+        border-radius: 11px;
+      }
+    }
+  }
+}
+
+.container {
+  width: 1200px;
+}
+
+.hover:hover {
+  color: $soft-cyan;
+}
